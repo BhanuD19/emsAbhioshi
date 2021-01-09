@@ -1,33 +1,9 @@
 // GENERATED CODE - DO NOT EDIT
+// This file provides a way of creating URL's based on all the actions
+// found in all the controllers.
 package routes
 
 import "github.com/revel/revel"
-
-
-type tEmployee struct {}
-var Employee tEmployee
-
-
-func (_ tEmployee) Index(
-		) string {
-	args := make(map[string]string)
-	
-	return revel.MainRouter.Reverse("Employee.Index", args).Url
-}
-
-func (_ tEmployee) Add(
-		) string {
-	args := make(map[string]string)
-	
-	return revel.MainRouter.Reverse("Employee.Add", args).Url
-}
-
-func (_ tEmployee) SaveAdd(
-		) string {
-	args := make(map[string]string)
-	
-	return revel.MainRouter.Reverse("Employee.SaveAdd", args).Url
-}
 
 
 type tApp struct {}
@@ -38,7 +14,7 @@ func (_ tApp) Index(
 		) string {
 	args := make(map[string]string)
 	
-	return revel.MainRouter.Reverse("App.Index", args).Url
+	return revel.MainRouter.Reverse("App.Index", args).URL
 }
 
 
@@ -50,7 +26,7 @@ func (_ tAttendance) Index(
 		) string {
 	args := make(map[string]string)
 	
-	return revel.MainRouter.Reverse("Attendance.Index", args).Url
+	return revel.MainRouter.Reverse("Attendance.Index", args).URL
 }
 
 
@@ -62,7 +38,59 @@ func (_ tDashboard) Index(
 		) string {
 	args := make(map[string]string)
 	
-	return revel.MainRouter.Reverse("Dashboard.Index", args).Url
+	return revel.MainRouter.Reverse("Dashboard.Index", args).URL
+}
+
+
+type tEmployee struct {}
+var Employee tEmployee
+
+
+func (_ tEmployee) Index(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("Employee.Index", args).URL
+}
+
+func (_ tEmployee) Add(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("Employee.Add", args).URL
+}
+
+func (_ tEmployee) SaveAdd(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("Employee.SaveAdd", args).URL
+}
+
+
+type tGorpController struct {}
+var GorpController tGorpController
+
+
+func (_ tGorpController) Begin(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("GorpController.Begin", args).URL
+}
+
+func (_ tGorpController) Commit(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("GorpController.Commit", args).URL
+}
+
+func (_ tGorpController) Rollback(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("GorpController.Rollback", args).URL
 }
 
 
@@ -78,7 +106,18 @@ func (_ tStatic) Serve(
 	
 	revel.Unbind(args, "prefix", prefix)
 	revel.Unbind(args, "filepath", filepath)
-	return revel.MainRouter.Reverse("Static.Serve", args).Url
+	return revel.MainRouter.Reverse("Static.Serve", args).URL
+}
+
+func (_ tStatic) ServeDir(
+		prefix string,
+		filepath string,
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "prefix", prefix)
+	revel.Unbind(args, "filepath", filepath)
+	return revel.MainRouter.Reverse("Static.ServeDir", args).URL
 }
 
 func (_ tStatic) ServeModule(
@@ -91,7 +130,20 @@ func (_ tStatic) ServeModule(
 	revel.Unbind(args, "moduleName", moduleName)
 	revel.Unbind(args, "prefix", prefix)
 	revel.Unbind(args, "filepath", filepath)
-	return revel.MainRouter.Reverse("Static.ServeModule", args).Url
+	return revel.MainRouter.Reverse("Static.ServeModule", args).URL
+}
+
+func (_ tStatic) ServeModuleDir(
+		moduleName string,
+		prefix string,
+		filepath string,
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "moduleName", moduleName)
+	revel.Unbind(args, "prefix", prefix)
+	revel.Unbind(args, "filepath", filepath)
+	return revel.MainRouter.Reverse("Static.ServeModuleDir", args).URL
 }
 
 
@@ -103,7 +155,7 @@ func (_ tTestRunner) Index(
 		) string {
 	args := make(map[string]string)
 	
-	return revel.MainRouter.Reverse("TestRunner.Index", args).Url
+	return revel.MainRouter.Reverse("TestRunner.Index", args).URL
 }
 
 func (_ tTestRunner) Suite(
@@ -112,7 +164,7 @@ func (_ tTestRunner) Suite(
 	args := make(map[string]string)
 	
 	revel.Unbind(args, "suite", suite)
-	return revel.MainRouter.Reverse("TestRunner.Suite", args).Url
+	return revel.MainRouter.Reverse("TestRunner.Suite", args).URL
 }
 
 func (_ tTestRunner) Run(
@@ -123,14 +175,14 @@ func (_ tTestRunner) Run(
 	
 	revel.Unbind(args, "suite", suite)
 	revel.Unbind(args, "test", test)
-	return revel.MainRouter.Reverse("TestRunner.Run", args).Url
+	return revel.MainRouter.Reverse("TestRunner.Run", args).URL
 }
 
 func (_ tTestRunner) List(
 		) string {
 	args := make(map[string]string)
 	
-	return revel.MainRouter.Reverse("TestRunner.List", args).Url
+	return revel.MainRouter.Reverse("TestRunner.List", args).URL
 }
 
 

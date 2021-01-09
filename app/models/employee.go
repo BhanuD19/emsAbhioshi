@@ -4,9 +4,11 @@ import (
     "time"
 )
 
-type User struct {
-    id int
+type Employee struct {
+    id int64
     name string
-    regularizeDate  time.Time
+    joiningDate  time.Time
     birthday time.Time
+    lastPaySlip time.Time
+    totalPaySlip int64
 }
